@@ -1,0 +1,41 @@
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+.kotlin/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Visual Studio Code
+.vscode/
+
+# Local environment and operating-system files
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+
+# Local task input
+/PROMPT.md
