@@ -67,3 +67,29 @@ tasks.register("runAllPhase1") {
     description = "Runs all eight Phase 1 experiments in numeric order."
     dependsOn(experimentTasks)
 }
+
+val phase2Experiments = mapOf(
+    "runE09" to "dev.coroutineslab.executionmodel.E09ContinuationContextAndDispatcherKt",
+    "runE10" to "dev.coroutineslab.executionmodel.E10ThreadSwitchingAndResumptionKt",
+)
+
+val phase2ExperimentTasks = phase2Experiments.map { (taskName, generatedMainClass) ->
+    tasks.register<JavaExec>(taskName) {
+        group = "coroutine experiments"
+        description = "Runs Phase 2 experiment ${taskName.removePrefix("runE")}."
+        classpath = sourceSets.main.get().runtimeClasspath
+        mainClass = generatedMainClass
+    }
+}
+
+phase2ExperimentTasks.zipWithNext().forEach { (earlier, later) ->
+    later.configure {
+        mustRunAfter(earlier)
+    }
+}
+
+tasks.register("runAllPhase2") {
+    group = "coroutine experiments"
+    description = "Runs the implemented Phase 2 experiments in numeric order."
+    dependsOn(phase2ExperimentTasks)
+}

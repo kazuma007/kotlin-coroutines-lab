@@ -1,6 +1,6 @@
 # Learning Roadmap
 
-Only Phase 1 has source code. Later phases remain plans.
+Phase 1 is complete. The first two Phase 2 topics now have source code.
 
 ## Phase 1: Coroutine Fundamentals
 
@@ -27,12 +27,17 @@ continuation details.
 
 ## Phase 2: Execution Model
 
-**Status:** Planned
+**Status:** In progress
 
-- [ ] `Continuation`, context, and dispatchers
-- [ ] Thread selection, switching, suspension, and resumption
+- [x] `Continuation`, context, and dispatchers
+- [x] Thread selection, switching, suspension, and resumption
 - [ ] Conceptual state-machine transformation
 - [ ] Low-level coroutine APIs
+
+Implemented experiments:
+[E09](../src/main/kotlin/dev/coroutineslab/executionmodel/E09ContinuationContextAndDispatcher.kt)
+and
+[E10](../src/main/kotlin/dev/coroutineslab/executionmodel/E10ThreadSwitchingAndResumption.kt).
 
 **Boundary:** conceptual models will be separated from compiler details.
 

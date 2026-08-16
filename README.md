@@ -2,13 +2,15 @@
 
 ## Project overview
 
-Eight executable Kotlin/JVM experiments explain coroutine fundamentals through
-code, output, and tests. Each source file contains its own concise explanation.
+Ten executable Kotlin/JVM experiments explain coroutine fundamentals and the
+execution model through code, output, and tests. Each source file contains its
+own concise explanation.
 
 ## Current status
 
 - Phase 1: **Implemented**
-- Phases 2–4: **Planned**
+- Phase 2: **In progress** (first two topics implemented)
+- Phases 3–4: **Planned**
 
 ## What this repository demonstrates
 
@@ -20,11 +22,12 @@ code, output, and tests. Each source file contains its own concise explanation.
 6. [`suspend` is not asynchronous](src/main/kotlin/dev/coroutineslab/fundamentals/E06SuspendIsNotAsync.kt)
 7. [Sequential versus concurrent execution](src/main/kotlin/dev/coroutineslab/fundamentals/E07SequentialVsConcurrent.kt)
 8. [`coroutineScope`](src/main/kotlin/dev/coroutineslab/fundamentals/E08CoroutineScope.kt)
+9. [`Continuation`, context, and dispatchers](src/main/kotlin/dev/coroutineslab/executionmodel/E09ContinuationContextAndDispatcher.kt)
+10. [Thread switching and resumption](src/main/kotlin/dev/coroutineslab/executionmodel/E10ThreadSwitchingAndResumption.kt)
 
 ## Requirements
 
 - Java 25
-- Internet access for the first dependency resolution
 
 The Gradle Wrapper is included; no system Gradle installation is needed.
 
@@ -32,7 +35,7 @@ The Gradle Wrapper is included; no system Gradle installation is needed.
 
 ```text
 docs/                       Short roadmap and glossary
-src/main/kotlin/            Eight experiments and the logger
+src/main/kotlin/            Ten experiments and the logger
 src/test/kotlin/            Behavior-focused tests
 gradle/                     Wrapper and pinned version catalog
 .github/workflows/          Java 25 build
@@ -50,10 +53,10 @@ Windows users can replace `./gradlew` with `gradlew.bat`.
 
 ```bash
 ./gradlew runE01
-./gradlew runE06
+./gradlew runE10
 ```
 
-Tasks `runE01` through `runE08` run experiments independently.
+Tasks `runE01` through `runE10` run experiments independently.
 
 ## Running all Phase 1 experiments
 
@@ -62,6 +65,12 @@ Tasks `runE01` through `runE08` run experiments independently.
 ```
 
 The tasks run in numeric order.
+
+## Running the implemented Phase 2 experiments
+
+```bash
+./gradlew runAllPhase2
+```
 
 ## Running the tests
 
@@ -78,13 +87,15 @@ thread names.
 - [E06: `suspend` is not asynchronous](src/main/kotlin/dev/coroutineslab/fundamentals/E06SuspendIsNotAsync.kt)
 - [E07: sequential versus concurrent](src/main/kotlin/dev/coroutineslab/fundamentals/E07SequentialVsConcurrent.kt)
 - [E08: structured work with `coroutineScope`](src/main/kotlin/dev/coroutineslab/fundamentals/E08CoroutineScope.kt)
+- [E09: continuation context](src/main/kotlin/dev/coroutineslab/executionmodel/E09ContinuationContextAndDispatcher.kt)
+- [E10: thread switching and resumption](src/main/kotlin/dev/coroutineslab/executionmodel/E10ThreadSwitchingAndResumption.kt)
 
 ## Learning roadmap
 
 | Phase | Focus | Status | Planned topics |
 | ----- | ----- | ------ | -------------- |
 | 1 | Fundamentals | Implemented | builders, suspension, composition, concurrency |
-| 2 | Execution model | Planned | contexts, dispatchers, continuations, resumption |
+| 2 | Execution model | In progress | contexts, dispatchers, continuations, resumption |
 | 3 | Lifecycle and failure | Planned | cancellation, exceptions, supervision |
 | 4 | Production concurrency | Planned | shared state, Channel, Flow, testing, performance |
 
@@ -100,8 +111,8 @@ See the [short roadmap](docs/learning-roadmap.md).
 
 ## Limitations
 
-This is an educational Phase 1 repository, not a benchmark or a replacement
-for official documentation. Timing varies, and a coroutine is not a thread.
+This is an educational repository, not a benchmark or a replacement for
+official documentation. Timing varies, and a coroutine is not a thread.
 
 ## References
 

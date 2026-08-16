@@ -15,5 +15,10 @@
 | Structured concurrency | Keeps child work bounded by the scope that created it. |
 | Sequential execution | One operation starts after the previous one finishes. |
 | Concurrent execution | Operations can make progress during overlapping lifetimes; they need not run simultaneously. |
+| Continuation | The remaining work of a coroutine, together with the context needed to continue it. |
+| `CoroutineContext` | A set of elements that describes a coroutine, such as its name, job, and dispatcher. |
+| Dispatcher | A context element that selects which thread or threads run a coroutine. |
+| `withContext` | Runs a suspending block with a changed context, then returns to the caller's context. |
+| Resumption | Continuing a coroutine after it has suspended. |
 
 Concurrency is not the same as parallelism, and suspension is not blocking.
