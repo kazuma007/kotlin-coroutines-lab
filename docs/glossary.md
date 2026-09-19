@@ -20,5 +20,8 @@
 | Dispatcher | A context element that selects which thread or threads run a coroutine. |
 | `withContext` | Runs a suspending block with a changed context, then returns to the caller's context. |
 | Resumption | Continuing a coroutine after it has suspended. |
+| State machine | A model that uses a state label to decide which section of work runs next. |
+| `createCoroutine` | A low-level function that creates a paused coroutine and returns the continuation used to start it. |
+| `resumeWith` | Delivers a success or failure to a continuation. |
 
 Concurrency is not the same as parallelism, and suspension is not blocking.

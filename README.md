@@ -2,14 +2,14 @@
 
 ## Project overview
 
-Ten executable Kotlin/JVM experiments explain coroutine fundamentals and the
+Twelve executable Kotlin/JVM experiments explain coroutine fundamentals and the
 execution model through code, output, and tests. Each source file contains its
 own concise explanation.
 
 ## Current status
 
 - Phase 1: **Implemented**
-- Phase 2: **In progress** (first two topics implemented)
+- Phase 2: **Implemented**
 - Phases 3–4: **Planned**
 
 ## What this repository demonstrates
@@ -24,6 +24,8 @@ own concise explanation.
 8. [`coroutineScope`](src/main/kotlin/dev/coroutineslab/fundamentals/E08CoroutineScope.kt)
 9. [`Continuation`, context, and dispatchers](src/main/kotlin/dev/coroutineslab/executionmodel/E09ContinuationContextAndDispatcher.kt)
 10. [Thread switching and resumption](src/main/kotlin/dev/coroutineslab/executionmodel/E10ThreadSwitchingAndResumption.kt)
+11. [Conceptual state-machine transformation](src/main/kotlin/dev/coroutineslab/executionmodel/E11ConceptualStateMachine.kt)
+12. [Low-level coroutine APIs](src/main/kotlin/dev/coroutineslab/executionmodel/E12LowLevelCoroutineApis.kt)
 
 ## Requirements
 
@@ -35,7 +37,7 @@ The Gradle Wrapper is included; no system Gradle installation is needed.
 
 ```text
 docs/                       Short roadmap and glossary
-src/main/kotlin/            Ten experiments and the logger
+src/main/kotlin/            Twelve experiments and the logger
 src/test/kotlin/            Behavior-focused tests
 gradle/                     Wrapper and pinned version catalog
 .github/workflows/          Java 25 build
@@ -53,10 +55,10 @@ Windows users can replace `./gradlew` with `gradlew.bat`.
 
 ```bash
 ./gradlew runE01
-./gradlew runE10
+./gradlew runE12
 ```
 
-Tasks `runE01` through `runE10` run experiments independently.
+Tasks `runE01` through `runE12` run experiments independently.
 
 ## Running all Phase 1 experiments
 
@@ -66,7 +68,7 @@ Tasks `runE01` through `runE10` run experiments independently.
 
 The tasks run in numeric order.
 
-## Running the implemented Phase 2 experiments
+## Running all Phase 2 experiments
 
 ```bash
 ./gradlew runAllPhase2
@@ -89,13 +91,15 @@ thread names.
 - [E08: structured work with `coroutineScope`](src/main/kotlin/dev/coroutineslab/fundamentals/E08CoroutineScope.kt)
 - [E09: continuation context](src/main/kotlin/dev/coroutineslab/executionmodel/E09ContinuationContextAndDispatcher.kt)
 - [E10: thread switching and resumption](src/main/kotlin/dev/coroutineslab/executionmodel/E10ThreadSwitchingAndResumption.kt)
+- [E11: conceptual state machine](src/main/kotlin/dev/coroutineslab/executionmodel/E11ConceptualStateMachine.kt)
+- [E12: low-level coroutine APIs](src/main/kotlin/dev/coroutineslab/executionmodel/E12LowLevelCoroutineApis.kt)
 
 ## Learning roadmap
 
-| Phase | Focus | Status | Planned topics |
-| ----- | ----- | ------ | -------------- |
+| Phase | Focus | Status | Topics |
+| ----- | ----- | ------ | ------ |
 | 1 | Fundamentals | Implemented | builders, suspension, composition, concurrency |
-| 2 | Execution model | In progress | contexts, dispatchers, continuations, resumption |
+| 2 | Execution model | Implemented | contexts, dispatchers, continuations, state machines, low-level APIs |
 | 3 | Lifecycle and failure | Planned | cancellation, exceptions, supervision |
 | 4 | Production concurrency | Planned | shared state, Channel, Flow, testing, performance |
 

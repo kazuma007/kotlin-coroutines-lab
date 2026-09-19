@@ -71,6 +71,8 @@ tasks.register("runAllPhase1") {
 val phase2Experiments = mapOf(
     "runE09" to "dev.coroutineslab.executionmodel.E09ContinuationContextAndDispatcherKt",
     "runE10" to "dev.coroutineslab.executionmodel.E10ThreadSwitchingAndResumptionKt",
+    "runE11" to "dev.coroutineslab.executionmodel.E11ConceptualStateMachineKt",
+    "runE12" to "dev.coroutineslab.executionmodel.E12LowLevelCoroutineApisKt",
 )
 
 val phase2ExperimentTasks = phase2Experiments.map { (taskName, generatedMainClass) ->
@@ -90,6 +92,6 @@ phase2ExperimentTasks.zipWithNext().forEach { (earlier, later) ->
 
 tasks.register("runAllPhase2") {
     group = "coroutine experiments"
-    description = "Runs the implemented Phase 2 experiments in numeric order."
+    description = "Runs all four Phase 2 experiments in numeric order."
     dependsOn(phase2ExperimentTasks)
 }

@@ -18,9 +18,10 @@ import kotlinx.coroutines.withContext
  * as CoroutineName, Job, and CoroutineDispatcher.
  *
  * A dispatcher is stored under the ContinuationInterceptor key because it
- * intercepts continuations and decides where they run. suspendCoroutine gives
- * this example its current continuation. Calling resume continues it exactly
- * once. Later experiments will cover the low-level APIs in more detail.
+ * intercepts continuations and decides where they run.
+ * suspendCancellableCoroutine gives this example its current continuation.
+ * Calling resume continues it exactly once. Later experiments cover the
+ * low-level APIs in more detail.
  */
 data class ContinuationContextSnapshot(
     val coroutineName: String?,
