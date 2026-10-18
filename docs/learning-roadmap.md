@@ -1,6 +1,6 @@
 # Learning Roadmap
 
-Phases 1 and 2 are complete. Later phases remain plans.
+Phases 1 and 2 are complete. The first two Phase 3 topics now have source code.
 
 ## Phase 1: Coroutine Fundamentals
 
@@ -46,12 +46,17 @@ of Kotlin compiler output for a particular version.
 
 ## Phase 3: Lifecycle, Cancellation, and Failure
 
-**Status:** Planned
+**Status:** In progress
 
-- [ ] Job hierarchy and structured concurrency
-- [ ] Cooperative cancellation, cleanup, and timeouts
+- [x] Job hierarchy and structured concurrency
+- [x] Cooperative cancellation, cleanup, and timeouts
 - [ ] Exception propagation and handling
 - [ ] Supervision
+
+Implemented experiments:
+[E13](../src/main/kotlin/dev/coroutineslab/lifecycle/E13JobHierarchyAndStructuredConcurrency.kt)
+and
+[E14](../src/main/kotlin/dev/coroutineslab/lifecycle/E14CancellationCleanupAndTimeouts.kt).
 
 **Boundary:** no Channels, Flow, or shared-state experiments.
 

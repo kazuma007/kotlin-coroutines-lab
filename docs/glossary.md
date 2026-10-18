@@ -23,5 +23,10 @@
 | State machine | A model that uses a state label to decide which section of work runs next. |
 | `createCoroutine` | A low-level function that creates a paused coroutine and returns the continuation used to start it. |
 | `resumeWith` | Delivers a success or failure to a continuation. |
+| Job hierarchy | Parent and child jobs connected through their coroutine scopes. |
+| Cancellation | A cooperative request for a coroutine to stop its work. |
+| Cleanup | Work in `finally` that runs when normal work finishes or is cancelled. |
+| Timeout | A time limit that cancels work when the limit is reached. |
+| `cancelAndJoin` | Requests cancellation and suspends until the job and its cleanup finish. |
 
 Concurrency is not the same as parallelism, and suspension is not blocking.
